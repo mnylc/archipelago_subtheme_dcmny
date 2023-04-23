@@ -38,7 +38,6 @@
 /.gitattributes
 /.htaccess
 /autoload.php
-/composer.json
 /composer.lock
 /example.gitignore
 /index.php
@@ -59,3 +58,7 @@ b4.gulpfile.js
 b4.package.json
 gulpfile.js
 *.xcf
+.idea/modules.xml
+.idea/archipelago_subtheme_dcmny.iml
+.idea/php.xml
+.idea/vcs.xml
