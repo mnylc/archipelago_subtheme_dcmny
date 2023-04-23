@@ -1,0 +1,17 @@
+global-styling:
+  version: VERSION
+  js:
+    js/popper.min.js: {  weight: -49}
+    js/bootstrap.min.js: { weight: -48 }
+    js/barrio.js: {}
+    js/custom.js: {}
+    https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js: {type: external, minified: true }
+    https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js: {type: external, minified: true }
+  css:
+    component:
+      css/style.css: {}
+      https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css: {type: external, minified: false }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/popperjs

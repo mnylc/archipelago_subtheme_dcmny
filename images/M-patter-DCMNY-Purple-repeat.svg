@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="53.11459mm"
+   height="52.976093mm"
+   viewBox="0 0 53.114589 52.976093"
+   version="1.1"
+   id="svg2423"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="M pattern DCMNY Purple repeat.svg"
+   inkscape:export-filename="/Users/dpino/m-patter-footer.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2417" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="16"
+     inkscape:cx="8.1968507"
+     inkscape:cy="40.119994"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g1432"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:snap-grids="true"
+     inkscape:snap-to-guides="true"
+     inkscape:window-width="1252"
+     inkscape:window-height="1174"
+     inkscape:window-x="258"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2994"
+       originx="-1.918759"
+       originy="0" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2420">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.9187592)">
+    <g
+       id="g1432"
+       transform="matrix(0.35277777,0,0,-0.35277777,41.532175,0)">
+      <path
+         id="path1434"
+         style="fill:#2f1e24;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
+         d="m 200.74805,0 c -133.832033,0 -66.91602,0 0,0 z m 0,0 H 149.7207 l -21.50976,155.83008 c -3.65867,22.044 -6.7899,25.11328 -16.97656,25.11328 -10.188,0 -13.317901,-3.06928 -16.976568,-25.11328 L 72.748047,0 H 0 V 200.22461 H 21.816406 V 36.949219 c 0,-10.186667 6.789896,-16.978516 16.976563,-16.978516 10.188,0 15.319531,2.359849 17.019531,16.978516 L 77.322266,200.22461 H 145.14648 L 166.6543,36.949219 c 1.7,-14.618667 6.83153,-16.978516 17.01953,-16.978516 5.09333,0 9.20917,1.832593 12.30925,4.669258 4.76492,4.360039 4.66926,12.309258 4.66926,12.309258 0,0 0.0957,-7.949219 0.0957,-36.949219 z"
+         transform="matrix(0.75000002,0,0,-0.75000002,-112.29,0)"
+         sodipodi:nodetypes="cccccscccccssccccssccc" />
+    </g>
+  </g>
+</svg>
