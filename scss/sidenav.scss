@@ -1,0 +1,107 @@
+@import "variables";
+
+#DcmnyLeftNav {
+
+  /* avoid links spanning over the sidebard width */
+  .navbar-nav {
+    .dropdown-menu {
+      --bs-dropdown-link-hover-bg: transparent;
+      --bs-dropdown-item-padding-x: 2rem;
+      position: static;
+      background-color: transparent;
+      .dropdown-item {
+        white-space: normal;
+        word-break: break-word;
+        hyphens: auto;
+      }
+    }
+    .nav-item {
+      .nav-link {
+        display: inline-block;
+      }
+    }
+  }
+
+  &.navbar-full-border {
+    &:after {
+      top: 0;
+    }
+  }
+  &:after {
+    position: absolute;
+    width: 1px;
+    left: var(--nav-bar-left-width);
+    height: calc((var(--vh,1vh)*100));
+    content: "";
+    top: 28rem;
+    border-right: 1px $body-color solid;
+    transition: top 0.2s ease-out;
+  }
+
+  .navbar-brand {
+    margin-top: 2.725rem;
+    margin-right: 0 !important;
+    width: calc((var(--nav-bar-left-width) - ($grid-gutter-width / 2)));
+    overflow: hidden;
+    pointer-events: all;
+    object {
+      pointer-events: none;
+      width: 50rem;
+      margin-left: calc($grid-gutter-width - 0.125rem);
+      transition: width 0.2s ease-out;
+      &.navbar-brand-logo-small {
+        padding-top: 1.875rem;
+        margin-left: 0;
+        width: calc((var(--nav-bar-left-width) - ($grid-gutter-width / 2)));
+      }
+    }
+  }
+
+  z-index: 500;
+  width: var(--nav-bar-left-width);
+  height: calc((var(--vh,1vh)*100));
+  align-items: flex-start;
+  /* same as #navbar-top */
+  background: url("../images/header-green-scaled-3-left.png");
+  background-repeat: no-repeat;
+  background-position-x: -9.25rem;
+  background-position-y: 0;
+  transition: padding-left 0.2s ease-out;
+  &.collapse:not(.show) {
+    + #page {
+      padding-left: 0;
+    }
+    height: 99px;
+    overflow:hidden;
+    .navbar_left_internal {
+      display: none;
+    }
+  }
+}
+#page {
+  padding-left: var(--nav-bar-left-width);
+}
+
+.navbar_left_internal {
+  padding-left: calc($grid-gutter-width/2);
+  padding-right: calc($grid-gutter-width/2);
+  padding-top: $grid-gutter-width;
+}
+
+#navbar-top.affix {
+  margin-left: var(--nav-bar-left-width);
+  width: calc(100% - var(--nav-bar-left-width));
+}
+/* Not sidenav but triggers things */
+#DcmnyWelcome {
+  position: relative;
+  .logo-container {
+    overflow:hidden;
+    margin-left: calc(calc(($grid-gutter-width/2) * -1) - 0.125rem);
+  }
+  object {
+    margin-left: -11rem;
+    width: 50rem;
+    margin-top: -1.5rem;
+  }
+}
