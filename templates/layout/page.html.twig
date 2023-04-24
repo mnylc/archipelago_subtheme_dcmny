@@ -194,7 +194,7 @@
       <div id="main-breadcrumbs" class="{{ container }}">
         {{ page.breadcrumb }}
       </div>
-      {% block content_top %}
+      {% block content %}
         <div id="main-top" class="{{ container }}">
           <div class="row justify-content-center">
             <div class="{{ content|join(" ") }}">
@@ -218,7 +218,7 @@
       {% endblock %}
     </div>
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
-      {% block content %}
+      {% block content_sidebars %}
         <div id="main" class="{{ container }}">
           <div class="row clearfix">
             <main{{ content_attributes.removeClass(['sidebar-offcanvas']) }}>
