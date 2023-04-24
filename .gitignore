@@ -62,3 +62,4 @@ gulpfile.js
 .idea/archipelago_subtheme_dcmny.iml
 .idea/php.xml
 .idea/vcs.xml
+.DS_Store
