@@ -729,8 +729,11 @@ body {
     div.dropdown {
       margin: 0 0 1rem 0;
     }
+    .nav {
+      --bs-nav-pills-link-active-color:$accent-shade;
+      --bs-nav-pills-link-active-bg:white;
+    }
 
-    --bs-nav-pills-link-active-bg: var(--bs-primary);
     .facet-summary-item--count {
       display:inline-block;
       font-size: $h4-font-size;
