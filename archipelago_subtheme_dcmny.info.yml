@@ -15,18 +15,18 @@ regions:
   left_navbar: 'Left navbar'
   top_header: 'Top header'
   top_header_form: 'Top header form'
-  header: Header
+  header: 'Header'
   header_form: 'Header form'
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
-  highlighted: Highlighted
+  highlighted: 'Highlighted'
   featured_top: 'Featured top'
-  breadcrumb: Breadcrumb
+  breadcrumb: 'Breadcrumb'
   breadcrumb_with_sidebar: 'Breadcrumb With Sidebars'
   content: 'Content without Sidebars'
-  content_second: 'Second Content without Sidebars '
+  content_second: 'Second Content without Sidebars'
   content_sidebars: 'Content with Sidebars'
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
