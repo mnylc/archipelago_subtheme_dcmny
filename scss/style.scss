@@ -487,11 +487,23 @@ body {
 
   /* Rest of the pages Page exception */
   .archipelago-dcmny-theme {
+    &.path-frontpage {
+      #navbar-top {
+        background-image: url("../images/header-green-scaled-3.png");
+        background-repeat: no-repeat;
+        background-position-x: -6.9rem;
+        background-position-y: 0;
+      }
+    }
+    &:not(.path-frontpage) {
+      #navbar-top {
+        background-image: url("../images/header-green-scaled-3-pink.png");
+        background-repeat: no-repeat;
+        background-position-x: -6.9rem;
+        background-position-y: 0;
+      }
+    }
     #navbar-top {
-      background-image: url("../images/header-green-scaled-3.png");
-      background-repeat: no-repeat;
-      background-position-x: -6.9rem;
-      background-position-y: 0;
       padding: 0 0.5rem;
       min-height: var(--nav-bar-top-height);
       margin-left: var(--nav-bar-left-width);

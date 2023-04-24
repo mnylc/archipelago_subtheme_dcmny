@@ -1,4 +1,22 @@
 @import "variables";
+.archipelago-dcmny-theme {
+  &.path-frontpage {
+    #DcmnyLeftNav {
+      background-image: url("../images/header-green-scaled-3-left.png");
+      background-repeat: no-repeat;
+      background-position-x: -9.25rem;
+      background-position-y: 0;
+    }
+  }
+  &:not(.path-frontpage) {
+    #DcmnyLeftNav {
+      background-image: url("../images/header-green-scaled-3-pink-left.png");
+      background-repeat: no-repeat;
+      background-position-x: -9.25rem;
+      background-position-y: 0;
+    }
+  }
+}
 
 #DcmnyLeftNav {
   /* avoid links spanning over the sidebard width */
@@ -62,10 +80,7 @@
   height: calc((var(--vh,1vh)*100));
   align-items: flex-start;
   /* same as #navbar-top */
-  background: url("../images/header-green-scaled-3-left.png");
-  background-repeat: no-repeat;
-  background-position-x: -9.25rem;
-  background-position-y: 0;
+
   transition: padding-left 0.2s ease-out;
   &.collapse:not(.show) {
     + #page {
