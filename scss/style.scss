@@ -76,7 +76,7 @@ body {
 }
 
 #main-wrapper {
-  padding-bottom: 20rem;
+  padding-bottom: map-get($spacers, 4) * 2;
 }
 
 #page {
