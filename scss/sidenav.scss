@@ -1,7 +1,6 @@
 @import "variables";
 
 #DcmnyLeftNav {
-
   /* avoid links spanning over the sidebard width */
   .navbar-nav {
     .dropdown-menu {
@@ -41,7 +40,7 @@
   .navbar-brand {
     margin-top: 2.725rem;
     margin-right: 0 !important;
-    width: calc((var(--nav-bar-left-width) - ($grid-gutter-width / 2)));
+    width: calc((var(--nav-bar-left-width) - ($grid-gutter-width / 2)) - 2px);
     overflow: hidden;
     pointer-events: all;
     object {

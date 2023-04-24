@@ -63,6 +63,9 @@ $grid-gutter-width: 2rem;
 
 
 :root {
+   .accordion {
+     --bs-accordion-btn-icon: url("../images/icons/dcmy-expand.svg");
+   }
   /* DCMNY sidebar */
   #DcmnyLeftNav {
     --bs-navbar-active-color: #{$accent-shade},

@@ -324,6 +324,25 @@ body {
 }
 
 :root {
+    #DcmnyLeftNav {
+      .nav {
+        --bs-nav-link-padding-x: 0.5rem;
+        .menu {
+          --bs-nav-link-padding-x: 0;
+        }
+      }
+    }
+    li.nav-item {
+      a.active {
+        color: $accent-shade;
+      }
+      list-style:none;
+      white-space: normal;
+      word-break: break-word;
+      -webkit-hyphens: auto;
+    }
+
+
   #navbar-main {
     min-height: 2rem;
     padding-top: calc(var(--bs-gutter-y) * 0.5);
@@ -720,7 +739,7 @@ body {
     .accordion {
       --bs-accordion-active-bg: #{$white};
       /* See https://yoksel.github.io/url-encoder/ so good */
-      --bs-accordion-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+    //  --bs-accordion-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
       --bs-accordion-btn-icon-transform: scale(1.5);
       --bs-accordion-btn-active-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
       --bs-accordion-border-radius: 0;
@@ -730,7 +749,7 @@ body {
       --bs-dropdown-link-color: var(--bs-secondary);
       --bs-dropdown-link-hover-color: #{$link-hover-color};
       --bs-dropdown-link-active-color: #{$link-hover-color};
-      --bs-dropdown-link-active-bg: var(--bs-primary);
+      --bs-dropdown-link-active-bg: white;
       --bs-dropdown-link-hover-bg: var(--bs-body-bg);
     }
     .sidebar h2, .sidebar .h2 {
