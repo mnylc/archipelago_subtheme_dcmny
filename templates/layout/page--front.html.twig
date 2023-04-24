@@ -190,6 +190,33 @@
         </div>
       {% endblock %}
     {% endif %}
+    <div id="main-wrapper-top" class="layout-main-wrapper clearfix">
+      <div id="main-breadcrumbs" class="{{ container }}">
+        {{ page.breadcrumb }}
+      </div>
+      {% block content_top %}
+        <div id="main-top" class="{{ container }}">
+          <div class="row justify-content-center">
+            <div class="{{ content|join(" ") }}">
+              <section class="section">
+                <a id="main-content-top" tabindex="-1"></a>
+                {{ page.content }}
+              </section>
+            </div>
+          </div>
+        </div>
+        <div id="main-top-left" class="{{ container }}">
+          <div class="row justify-content-left">
+            <div class="{{ content_second|join(" ") }}">
+              <section class="section">
+                <a id="main-content-left" tabindex="-1"></a>
+                {{ page.content_second }}
+              </section>
+            </div>
+          </div>
+        </div>
+      {% endblock %}
+    </div>
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
         <div id="main" class="{{ container }}">
@@ -200,7 +227,7 @@
                   {{ page.breadcrumb_with_sidebar }}
                 </div>
                 <a id="main-content" tabindex="0"></a>
-                {{ page.content }}
+                {{ page.content_sidebars }}
               </section>
             </main>
             {% if page.sidebar_first %}
