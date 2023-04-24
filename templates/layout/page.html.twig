@@ -247,31 +247,6 @@
           </div>
         </div>
       {% endblock %}
-      <div id="main-breadcrumbs" class="{{ container }}">
-        {{ page.breadcrumb }}
-      </div>
-      {% block content_top %}
-        <div id="main-top" class="{{ container }}">
-          <div class="row justify-content-center">
-            <div class="{{ content_top_classes|join(" ") }}">
-              <section class="section">
-                <a id="main-content-top" tabindex="-1"></a>
-                {{ page.content_top }}
-              </section>
-            </div>
-          </div>
-        </div>
-        <div id="main-top-left" class="{{ container }}">
-          <div class="row justify-content-left">
-            <div class="{{ content_top_classes|join(" ") }}">
-              <section class="section">
-                <a id="main-content-left" tabindex="-1"></a>
-                {{ page.content_top_left }}
-              </section>
-            </div>
-          </div>
-        </div>
-      {% endblock %}
       <a href="#page-wrapper" class="back-to-top" rel="nofollow">
         <i class="fas fa-chevron-up"></i>
         <span class="sr-only">Back to top</span>
