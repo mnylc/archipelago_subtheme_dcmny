@@ -2,6 +2,11 @@
 
 #DcmnyLeftNav {
   /* avoid links spanning over the sidebard width */
+  .navbar-expand-lg {
+    flex-flow: column;
+  }
+
+
   .navbar-nav {
     .dropdown-menu {
       --bs-dropdown-link-hover-bg: transparent;
