@@ -20,6 +20,18 @@ body {
   #page {
     transition: padding-left 0.2s ease-out;
   }
+
+  /* Drupal specifics */
+
+  .block-page-title-block {
+    padding-top: map-get($spacers, 1);
+  }
+
+
+  /* End Drupal specifics */
+
+
+
   a:not(.navbar-brand) {
     text-decoration-color: black;
     text-decoration-skip-ink: auto;

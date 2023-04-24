@@ -41,7 +41,7 @@
       if ($(context).is('.view') || context == document) {
         /* Masonry Initialize so Ajax views can catch up */
         // init Masonry
-        var $grid = $('.view-display-id-grid > div.view-content > div.container-fluid > div.cards-masonry').masonry({
+        var $grid = $('div.cards-masonry').masonry({
           //percentPosition: true,
           itemSelector: '.card-masonry-wrapper',
         });

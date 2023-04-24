@@ -2,18 +2,29 @@
   {% block footer %}
     <div class="{{ container }}">
       <div class="site-footer__top clearfix">
-      {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-          {{ page.footer_first }}
-          {{ page.footer_second }}
-          {{ page.footer_third }}
-          {{ page.footer_fourth }}
+      {% if page.footer_top %}
+          {{ page.footer_top }}
       {% endif %}
       </div>
     </div>
-    <div class="site-footer__bottom">
+    <div class="{{ container }}">
+      <div class="site-footer__center row clearfix">
+        {% if page.footer_center_left %}
+          <div class="col-md-12 col-sm-12 col-7">
+          {{ page.footer_center_left }}
+          </div>
+        {% endif %}
+        {% if page.footer_center_right %}
+            <div class="col-md-12 col-sm-12 col-5">
+          {{ page.footer_center_right }}
+            </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="site-footer__bottom clearfix">
       <div class="{{ container }}">
-      {% if page.footer_fifth %}
-          {{ page.footer_fifth }}
+      {% if page.footer_bottom %}
+          {{ page.footer_bottom }}
       {% endif %}
       </div>
     </div>
