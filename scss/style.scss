@@ -784,6 +784,14 @@ a.nav-link {
     .nav {
       --bs-nav-pills-link-active-color:$accent-shade;
       --bs-nav-pills-link-active-bg:white;
+      /* exception for DCMNY ul -> li with nav pills */
+      ul.nav-pills {
+        .nav-link {
+          padding-left: 0;
+          padding-right: 0;
+          margin-right: var(--bs-nav-link-padding-x);
+        }
+      }
     }
 
     .facet-summary-item--count {
