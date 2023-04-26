@@ -30,6 +30,9 @@ body {
       margin-top: 1rem;
     }
   }
+  .feed-icons {
+    display: none;
+  }
   /* End Drupal specifics */
   a.highlighted_pumpkin {
     &:hover {
