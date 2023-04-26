@@ -42,6 +42,9 @@ body {
       outline-color: $fifth-shade;
       transition: background-color .3s ease-out;
       div.highlighted_pumpkin_description {
+        &.col-12 {
+          height: 10rem;
+        }
         height: 20rem;
         outline-width: 1px;
         outline-style: solid;
@@ -49,6 +52,11 @@ body {
         padding: 2rem;
       }
       div.highlighted_pumpkin_image_wrapper {
+        &.col-12 {
+          .highlighted_pumpkin_image {
+            height: 10rem;
+          }
+        }
         .highlighted_pumpkin_image {
           overflow: hidden;
           width:100%;
@@ -57,7 +65,6 @@ body {
         img {
           width: 100%;
           height: 100%;
-          object-position: 50% top;
           object-fit: cover;
           // position: absolute;
           // top: 0; right: 0; bottom: 0; left: 0;
