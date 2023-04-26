@@ -25,6 +25,11 @@ body {
   .block-page-title-block {
     padding-top: map-get($spacers, 4);
   }
+  .field-content {
+    dl:first-of-type {
+      margin-top: 1rem;
+    }
+  }
   /* End Drupal specifics */
   a.highlighted_pumpkin {
     &:hover {
