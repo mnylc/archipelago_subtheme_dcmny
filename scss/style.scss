@@ -22,6 +22,10 @@ body {
   display: flex;
   flex-direction: column;
   #page {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     transition: padding-left 0.2s ease-out;
   }
 
@@ -151,6 +155,8 @@ a.nav-link {
 }
 
 .site-footer {
+  display: flex;
+  flex-flow: column;
   position: relative;
   height: 20rem;
   // See page-wrapper is flex this will push it to the end
