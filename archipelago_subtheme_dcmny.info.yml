@@ -35,6 +35,7 @@ regions:
   featured_bottom_third: 'Featured bottom third'
   footer_top: 'Footer Top'
   footer_center_left: 'Footer Center Left'
+  footer_center_center: 'Footer Center Center'
   footer_center_right: 'Footer Center Right'
   footer_bottom: 'Footer Bottom'
 

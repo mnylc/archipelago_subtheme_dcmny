@@ -69,7 +69,7 @@ $grid-gutter-width: 2rem;
    }
   /* DCMNY sidebar */
   #DcmnyLeftNav {
-    --bs-navbar-active-color: #{$accent-shade},
+    --bs-navbar-active-color: #{$accent-shade};
   }
   --nav-bar-left-width: 14rem;
   --nav-bar-top-height: 67px;

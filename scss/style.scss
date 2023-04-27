@@ -12,11 +12,18 @@ body {
 }
 
 #toolbar-bar {
+  &.toolbar-bar {
+    z-index: 2000;
+  }
   margin-top: 99px;
 }
 
 /* animate underline except for navbar-brand */
 #page-wrapper {
+  .fixed-top {
+    /* avoid Mirador's z-index */
+    z-index: 1110;
+  }
   min-height: 100vh;
   height: 100%;
   display: flex;
@@ -55,12 +62,13 @@ body {
       div.highlighted_pumpkin_description {
         &.col-12 {
           height: 10rem;
+          padding: 1rem 2rem;
         }
         height: 20rem;
         outline-width: 1px;
         outline-style: solid;
         outline-color: $fifth-shade;
-        padding: 2rem;
+        padding: 2rem 2rem;
       }
       div.highlighted_pumpkin_image_wrapper {
         &.col-12 {
@@ -112,10 +120,9 @@ a:not(.navbar-brand) {
   }
 }
 
-a.nav-link {
+a.nav-link, li.dropdown-item a {
   position: relative;
   text-decoration: none;
-
   &:before {
     content: "";
     position: absolute;
@@ -136,6 +143,10 @@ a.nav-link {
     }
   }
 }
+/* Exception for dropdowns so they are fully clickable */
+li.dropdown-item a {
+  display: inline-block;
+}
 
 
 
@@ -155,6 +166,13 @@ a.nav-link {
 }
 
 .site-footer {
+  .block-menu a.nav-link {
+    color: whitesmoke;
+    &:hover {
+    color:white;
+  }
+    width: fit-content;
+  }
   display: flex;
   flex-flow: column;
   position: relative;
@@ -199,27 +217,18 @@ a.nav-link {
   }
 }
 
-.menu--main li:not(.dropdown-item) > a {
-  color: black;
-}
 
-.menu--account li a {
-  color: black;
-}
 
 .slick {
   width: 100%;
 }
 
-.slick>div {
+.slick > div {
   margin: 0 15px;
 }
 
 .dropdown-menu {
   --bs-dropdown-zindex: 9999 !important;
-  background-color: $quaternary-shade;
-  border-radius-top-left: 0 !important;
-  border-radius-top-right:  0 !important;
   border: none;
 }
 
@@ -846,7 +855,6 @@ a.nav-link {
       --bs-dropdown-link-hover-color: #{$link-hover-color};
       --bs-dropdown-link-active-color: #{$link-hover-color};
       --bs-dropdown-link-active-bg: white;
-      --bs-dropdown-link-hover-bg: var(--bs-body-bg);
     }
     .sidebar h2, .sidebar .h2 {
       border-bottom: none;

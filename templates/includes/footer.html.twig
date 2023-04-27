@@ -10,12 +10,17 @@
     <div class="{{ container }}">
       <div class="site-footer__center row clearfix">
         {% if page.footer_center_left %}
-          <div class="col-md-12 col-sm-12 col-7">
+          <div class="col-sm-12 col-md-6 col-lg-3">
           {{ page.footer_center_left }}
           </div>
         {% endif %}
+        {% if page.footer_center_center %}
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            {{ page.footer_center_center }}
+          </div>
+        {% endif %}
         {% if page.footer_center_right %}
-            <div class="col-md-12 col-sm-12 col-5">
+            <div class="col-sm-12 col-md-12 col-lg-6">
           {{ page.footer_center_right }}
             </div>
         {% endif %}

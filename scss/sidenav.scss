@@ -24,7 +24,6 @@
     flex-flow: column !important;
     .dropdown-menu {
       --bs-dropdown-link-hover-bg: transparent;
-      --bs-dropdown-item-padding-x: 2rem;
       position: static;
       background-color: transparent;
       .dropdown-item {
@@ -35,6 +34,8 @@
     }
     .nav-item {
       .nav-link {
+        color: black;
+        width: 100%;
         display: inline-block;
       }
     }
