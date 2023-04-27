@@ -51,26 +51,30 @@
     left: var(--nav-bar-left-width);
     height: calc((var(--vh,1vh)*100));
     content: "";
-    top: 26.5rem;
+    top: 30.5rem;
     border-right: 1px $body-color solid;
     transition: top 0.2s ease-out;
   }
 
   .navbar-brand {
-    margin-top: 2.725rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     margin-right: 0 !important;
-    width: calc((var(--nav-bar-left-width) - ($grid-gutter-width / 2)) - 2px);
+    // This hides the rendering offset (1 pixel)
+    width: calc(var(--nav-bar-left-width) - 1.5rem);
     overflow: hidden;
     pointer-events: all;
     object {
       pointer-events: none;
-      width: 50rem;
-      margin-left: calc($grid-gutter-width - 0.125rem);
+      width: 45rem;
+      margin-left: 2.95rem;
       transition: width 0.2s ease-out;
+      margin-top: 2rem;
       &.navbar-brand-logo-small {
-        padding-top: 1.875rem;
+        padding-top: 0;
         margin-left: 0;
-        width: calc((var(--nav-bar-left-width) - ($grid-gutter-width / 2)));
+        width: calc((var(--nav-bar-left-width) - ($grid-gutter-width)));
+        margin-top: 0;
       }
     }
   }
@@ -100,7 +104,7 @@
 .navbar_left_internal {
   padding-left: calc($grid-gutter-width/2);
   padding-right: calc($grid-gutter-width/2);
-  padding-top: $grid-gutter-width;
+  padding-top: calc(var(--nav-bar-top-height) + 2rem)
 }
 
 #navbar-top.affix {
@@ -112,11 +116,12 @@
   position: relative;
   .logo-container {
     overflow:hidden;
-    margin-left: calc(calc(($grid-gutter-width/2) * -1) - 0.125rem);
+    margin-left: calc(($grid-gutter-width / 2) * -1 - 0.125rem);
   }
   object {
-    margin-left: -11rem;
-    width: 50rem;
-    margin-top: -1.5rem;
+    margin-left: -10rem;
+    width: 45rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
   }
 }

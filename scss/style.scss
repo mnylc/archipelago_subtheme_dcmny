@@ -17,6 +17,10 @@ body {
 
 /* animate underline except for navbar-brand */
 #page-wrapper {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   #page {
     transition: padding-left 0.2s ease-out;
   }
@@ -149,6 +153,8 @@ a.nav-link {
 .site-footer {
   position: relative;
   height: 20rem;
+  // See page-wrapper is flex this will push it to the end
+  margin-top: auto;
   width: 100%;
   padding: 2rem 1rem;
   background: url("../images/M-patter-DCMNY-Purple-repeat.png"), $quaternary-shade;
