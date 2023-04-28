@@ -160,9 +160,10 @@ li.dropdown-item a {
   padding-bottom: map-get($spacers, 4) * 2;
 }
 
-#page {
-  overflow:auto;
-  min-height: 100%;
+#NavbarTopWrapper, #NavbarWrapper {
+  flex-basis: auto;
+  flex-grow: 1;
+  display: flex;
 }
 
 .site-footer {
@@ -186,9 +187,6 @@ li.dropdown-item a {
   background-position-x: 0;
   background-position-y: 0;
   background-size: 6rem auto;
-  a {
-    color: $fifth-shade;
-  }
 }
 
 .site-footer__bottom {
@@ -274,7 +272,39 @@ li.dropdown-item a {
     .nav-link--advanced-search {
       display:block;
     }
+    // Will make input full width.
+    margin-left: 0 !important;
+    /* search box */
+    .views-exposed-form {
+      &:focus-within {
+        input[name="search_api_fulltext"] {
+          width: 100%;
+        }
+      }
+    }
+
+    .form-item-search-api-fulltext {
+      &:before {
+        width: 2.5rem;
+        height: 2.5rem;
+        content: "";
+        /* TODO ask Allison if we need an icon */
+        //background-image: url("../images/icons/noun-search-744183.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        padding: $input-padding-y $input-padding-x;
+        pointer-events: none;
+      }
+    }
+    input[name="search_api_fulltext"] {
+      transition: width 0.2s ease-out;
+      width: 100%;
+    }
   }
+
+
+
   .block-facets-summary {
     flex-basis: 100%;
     padding-bottom: 1rem;
@@ -331,7 +361,7 @@ li.dropdown-item a {
         width: 2.5rem;
         height: 2.5rem;
         content: "";
-        /* TODO as Allison if we need an icon */
+        /* TODO ask Allison if we need an icon */
         //background-image: url("../images/icons/noun-search-744183.svg");
         background-repeat: no-repeat;
         background-size: contain;
@@ -362,9 +392,13 @@ li.dropdown-item a {
     }
   }
 
-  .nav-item.menu-item--expanded.dropdown {
-    z-index: 9999;
+  .nav-item.menu-item--expanded {
+    width:100%;
+    &.dropdown {
+      z-index: 9999;
+    }
   }
+
 
   .navbar-nav .dropdown-menu {
     position: absolute;
@@ -812,6 +846,19 @@ li.dropdown-item a {
     div.dropdown {
       margin: 0 0 1rem 0;
     }
+
+    .site-footer__center {
+      .nav {
+        --bs-nav-link-padding-x: 0;
+        --bs-nav-link-padding-y: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+      }
+    }
+
     .nav {
       --bs-nav-pills-link-active-color:$accent-shade;
       --bs-nav-pills-link-active-bg:white;

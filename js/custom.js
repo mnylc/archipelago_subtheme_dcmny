@@ -18,12 +18,15 @@
                 let $sidebar = document.querySelector('#DcmnyLeftNav');
                 $element.classList.add('navbar-brand-logo-small');
                 $sidebar.classList.add('navbar-full-border');
+                entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeOut");
               } else {
                 console.log('Pumpkin out of the field');
                 let $sidebar = document.querySelector('#DcmnyLeftNav');
                 let $element = document.querySelector('#navlogo');
                 $element.classList.remove('navbar-brand-logo-small');
                 $sidebar.classList.remove('navbar-full-border');
+                entries[0].target.querySelector('.logo').classList.remove("animate__fadeOut");
+                entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeIn");
               }
             },{
               root: null,

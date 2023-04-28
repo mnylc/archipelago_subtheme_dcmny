@@ -82,15 +82,17 @@
   'col-sm-12',
 ]
 %}
+{%  set navbar_collapse_class = navbar_collapse_class.removeClass(['']) %}
+
 {%if 'container' == container %}
   {% set container = 'container-lg' %}
 {% endif %}
 <div id="page-wrapper">
   {%  block side_navbar %}
     {% if page.left_navbar %}
-      <nav class="navbar navbar-expand-lg fixed-top collapse show collapse-horizontal navbar-dark d-flex" id="DcmnyLeftNav">
+      <nav class="navbar navbar-expand-lg fixed-top collapse show collapse-horizontal d-flex" id="DcmnyLeftNav">
         <div class="navbar_left_internal">
-          <a class="navbar-brand d-none d-lg-block" href="/">
+          <a class="navbar-brand d-block" href="/">
             <object id="navlogo" class="logo" data="{{ logo }}" alt="DCMNY"></object>
           </a>
           <div class="navbar__nav">
@@ -109,8 +111,7 @@
             <div class="{{ container }}">
             {% endif %}
               {{ page.top_header }}
-              <button class="navbar-toggler collapsed ml-auto" type="button" data-bs-toggle="{{ navbar_collapse_btn_data }}" data-bs-target="#CollapsingNavbarTop" aria-controls="CollapsingNavbarTop" aria-expanded="false" aria-label="Toggle Top navigation"><span class="navbar-toggler-icon"></span></button>
-              <div class="{{ navbar_collapse_class }}" id="CollapsingNavbarTop">
+              <div class="justify-content-end" id="NavbarTopWrapper">
                 {{ page.secondary_menu }}
                 {% if page.top_header_form %}
                   <div class="form-inline navbar-form ms-auto">
@@ -137,8 +138,7 @@
           {% endif %}
                 {{ page.header }}
                 {% if page.primary_menu or page.header_form %}
-                  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="{{ navbar_collapse_btn_data }}" data-bs-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                  <div class="{{ navbar_collapse_class }}" id="CollapsingNavbar">
+                  <div class="justify-content-end" id="NavbarWrapper">
                     {% if navbar_offcanvas %}
                     <div class="offcanvas-header">
                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -155,9 +155,6 @@
                     </div>
                     {% endif %}
                   </div>
-                {% endif %}
-                {% if sidebar_collapse %}
-                  <button class="navbar-toggler navbar-toggler-left collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CollapsingLeft" aria-controls="CollapsingLeft" aria-expanded="false" aria-label="Toggle navigation"></button>
                 {% endif %}
           {% if container_navbar %}
                 </div>
