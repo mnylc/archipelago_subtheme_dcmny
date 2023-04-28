@@ -18,6 +18,11 @@ body {
   margin-top: 99px;
 }
 
+.ui-front {
+  //@ see .affix
+  z-index: 2001 !important;
+}
+
 /* animate underline except for navbar-brand */
 #page-wrapper {
   .fixed-top {
@@ -341,10 +346,6 @@ li.dropdown-item a {
 
 /* dcmny overrides all sizes except small */
 @include media-breakpoint-up(md) {
-  .ui-front {
-    //@ see .affix
-    z-index: 1200;
-  }
   /* Hides any top navbar link pointing to advanced-search */
   #navbar-top {
     /* search box */
