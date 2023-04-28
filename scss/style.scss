@@ -343,7 +343,7 @@ li.dropdown-item a {
 @include media-breakpoint-up(md) {
   .ui-front {
     //@ see .affix
-    z-index: 1036;
+    z-index: 1200;
   }
   /* Hides any top navbar link pointing to advanced-search */
   #navbar-top {
