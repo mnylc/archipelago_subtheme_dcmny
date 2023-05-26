@@ -146,6 +146,7 @@
   #page {
     padding-left: 0;
   }
+
   // WE don't want this to be a thing when in smaller displays
   #DcmnyLeftNav {
     &.collapse:not(.show) {
@@ -155,6 +156,8 @@
     .navbar_left_internal.navbar-collapse {
       flex-direction: row !important;
       background-color: white;
+      /* super important for in-between lg and md sizes */
+      background-clip: content-box;
     }
     &:after {
       display: none;
@@ -166,6 +169,20 @@
       top:0;
       border-right: none;
       transition: none;
+    }
+    .navbar-brand {
+      object {
+        margin-left: 1rem;
+        transition: width 0.2s linear;
+        margin-top: 2rem;
+        max-width: fit-content;
+        &.navbar-brand-logo-small {
+          padding-top: unset;
+          margin-top: 2rem;
+          margin-left: 1rem;
+          max-width: fit-content;
+        }
+      }
     }
   }
 }
@@ -189,5 +206,16 @@
     width: 45rem;
     margin-top: 3.5rem;
     margin-bottom: 1.5rem;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  #DcmnyWelcome {
+    object {
+      margin-left: 0;
+      width: 100%;
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
   }
 }
