@@ -18,7 +18,7 @@
   ]
 %}
 {% set col_classes = options.row_class %}
-{% if (options.row_class is traversable) %}
+{% if (options.row_class is iterable) %}
   {% set col_classes = options.row_class|merge(['card-masonry-wrapper', 'd-flex']) %}
 {% else %}
   {% set col_classes = options.row_class ~ ' card-masonry-wrapper d-flex' %}
