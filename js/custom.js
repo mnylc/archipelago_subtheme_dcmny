@@ -12,6 +12,7 @@
       $('#page-wrapper').once('attache_observer')
         .each(function (index, value) {
             var observer = new IntersectionObserver(function (entries) {
+              console.log(entries);
               if (!entries[0].isIntersecting) {
                 console.log('Pumpkin in the field');
                 let $element = document.querySelector('#navlogo');
@@ -29,7 +30,7 @@
                 entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeIn");
               }
             },{
-              root: null,
+              root: document,
               //rootMargin: '-50px 0px',
               threshold: 1
             });
