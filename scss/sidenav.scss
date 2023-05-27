@@ -60,6 +60,7 @@
     width: calc(var(--nav-bar-left-width) - 1.5rem);
     overflow: hidden;
     pointer-events: all;
+    background-color: white;
     object {
       pointer-events: none;
       width: 45rem;
@@ -67,6 +68,7 @@
       transition: width 0.2s ease-out;
       margin-top: 2rem;
       &.navbar-brand-logo-small {
+        background-color: white;
         padding-top: 0;
         margin-left: 0;
         width: calc((var(--nav-bar-left-width) - ($grid-gutter-width)));
@@ -184,7 +186,7 @@
       transition: none;
     }
     .navbar-brand {
-      background-color: white;
+      background-color: transparent;
       margin-top: 0;
       object {
         margin-left: 1rem;
