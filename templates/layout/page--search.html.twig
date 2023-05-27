@@ -1,0 +1,6 @@
+{%
+  set sidebar_second_attributes = sidebar_second_attributes.removeClass(['order-last']).addClass(['order-lg-last', 'order-first'])
+%}
+  {% block page %}
+      {% include directory ~ '/templates/layout/page.html.twig' %}
+    {% endblock %}
