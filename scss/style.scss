@@ -171,6 +171,13 @@ li.dropdown-item a {
   display: flex;
 }
 
+#NavbarWrapper {
+  .nav-link {
+    --bs-nav-link-color: white;
+    --bs-nav-link-hover-color: white;
+  }
+}
+
 .site-footer {
   .block-menu a.nav-link {
     color: whitesmoke;

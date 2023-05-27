@@ -17,13 +17,18 @@
     'views-view-grid',
   ]
 %}
+{%
+  set col_classes = options.row_class|merge(['card-masonry-wrapper', 'd-flex'])
+%}
+
+
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
 <div id="{{ id }}" {{ attributes.addClass(classes) }}>
-  <div class="row mb-5" data-masonry='{"percentPosition": true }'>
+  <div class="row cards-masonry mb-5" data-masonry='{"percentPosition": true }'>
     {% for row in rows %}
-      <div {{ row_attributes.addClass(options.row_class) }}>
+      <div {{ row_attributes.addClass(col_classes) }}>
         {{ row }}
       </div>
     {% endfor %}
