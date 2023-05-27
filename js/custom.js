@@ -16,12 +16,14 @@
               const ratio = entries[0].intersectionRatio;
               console.log(ratio);
               console.log(entries[0].isIntersecting);
-              if (ratio < 0.9) {
+              if (ratio < 0.8) {
                 let $element = document.querySelector('#navlogo');
                 let $sidebar = document.querySelector('#DcmnyLeftNav');
                 $element.classList.add('navbar-brand-logo-small');
                 $sidebar.classList.add('navbar-full-border');
-                entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeOut");
+                if (entries[0].target.querySelector('.logo').classList.contains("animate__fadeIn")) {
+                  entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeOut");
+                }
               } else {
                 let $sidebar = document.querySelector('#DcmnyLeftNav');
                 let $element = document.querySelector('#navlogo');
@@ -32,7 +34,7 @@
               }
             },{
               root: null,
-              rootMargin: '-20px 0px',
+              rootMargin: '-10px 0px',
               threshold: [...Array(10).keys()].map(x => x / 10)
             });
             let $observedElement = document.querySelector("#DcmnyWelcome > .logo-container");
