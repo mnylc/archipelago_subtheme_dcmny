@@ -19,7 +19,7 @@
 %}
 {% set col_classes = options.row_class %}
 {% if (options.row_class is traversable) %}
-  {% set col_classes = options.row_class|merge(['card-masonry-wrapper', 'd-flex'] %}
+  {% set col_classes = options.row_class|merge(['card-masonry-wrapper', 'd-flex']) %}
 {% else %}
   {% set col_classes = options.row_class ~ ' card-masonry-wrapper d-flex' %}
 {% endif %}
