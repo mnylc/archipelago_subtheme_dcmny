@@ -491,7 +491,7 @@ li.dropdown-item a {
       position: absolute;
       /* left: calc((var(--nav-bar-left-width) - var(--bs-btn-padding-x) * 2) - $burger-width); */
       left: 0;
-      top: 0;
+      top: 0.25rem;
       /* diverges from every other button in the site */
       padding-top: 0.25rem;
       padding-bottom: 0.25rem;

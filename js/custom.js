@@ -14,8 +14,6 @@
             let root = document.querySelector('#navbar-main');
             var observer = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
-              console.log(ratio);
-              console.log(entries[0].isIntersecting);
               if (ratio < 0.8) {
                 let $element = document.querySelector('#navlogo');
                 let $sidebar = document.querySelector('#DcmnyLeftNav');
