@@ -31,11 +31,11 @@
                 entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeIn");
               }
             },{
-              root: document,
+              root: null,
               rootMargin: '-20px 0px',
-              threshold: [...Array(50).keys()].map(x => x / 50)
+              threshold: [...Array(10).keys()].map(x => x / 10)
             });
-            let $observedElement = document.querySelector("#DcmnyWelcome");
+            let $observedElement = document.querySelector("#DcmnyWelcome > .logo-container");
             if ($observedElement) {
               observer.observe($observedElement)
             }
