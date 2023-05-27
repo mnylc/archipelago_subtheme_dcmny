@@ -11,8 +11,12 @@
     attach: function (context, settings) {
       $('#page-wrapper').once('attache_observer')
         .each(function (index, value) {
+            let root = document.querySelector('#navbar-main');
             var observer = new IntersectionObserver(function (entries) {
-              if (!entries[0].isIntersecting) {
+              const ratio = entries[0].intersectionRatio;
+              console.log(ratio);
+              console.log(entries[0].isIntersecting);
+              if (ratio < 0.9) {
                 let $element = document.querySelector('#navlogo');
                 let $sidebar = document.querySelector('#DcmnyLeftNav');
                 $element.classList.add('navbar-brand-logo-small');
@@ -28,8 +32,8 @@
               }
             },{
               root: document,
-              //rootMargin: '-50px 0px',
-              threshold: 1
+              rootMargin: '-20px 0px',
+              threshold: [...Array(50).keys()].map(x => x / 50)
             });
             let $observedElement = document.querySelector("#DcmnyWelcome");
             if ($observedElement) {
