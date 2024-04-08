@@ -511,6 +511,10 @@ li.dropdown-item a {
       }
     }
   }
+  /* Badges, long dates */
+  span.badge {
+    white-space: pre-line;
+  }
 
   /* IA Bookreader */
   #page .BookReader .BookReaderSearchHilite, #page .BRmobileMenu #page .BookReaderSearchHilite, #page .BRfloat .BookReaderSearchHilite {
