@@ -2,8 +2,8 @@ name: Archipelago DCMNY Boostrap Barrio SASS
 type: theme
 description: 'SASS starter kit for a Bootstrap Barrio SubTheme.'
 # version: VERSION
-core: 8.x
-core_version_requirement: ^8 || ^9 || ^10
+core: 10.x
+core_version_requirement: ^10
 base theme: bootstrap_barrio
 logo: 'images/DCMNY-Logo.svg'
 ico: 'favicon.ico'
