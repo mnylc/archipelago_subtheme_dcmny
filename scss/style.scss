@@ -25,6 +25,9 @@ body {
 
 /* animate underline except for navbar-brand */
 #page-wrapper {
+  .card-masonry-wrapper {
+    height:fit-content;
+  }
   .fixed-top {
     /* avoid Mirador's z-index */
     z-index: 1110;

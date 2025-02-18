@@ -3,14 +3,14 @@
  * Global utilities.
  *
  */
-(function($, Drupal) {
+(function($, Drupal, once) {
 
   'use strict';
 
   Drupal.behaviors.archipelago_subtheme_rpi = {
     attach: function (context, settings) {
-      $('#page-wrapper').once('attache_observer')
-        .each(function (index, value) {
+      const elementsToAttach = once('attach_iab', '#page-wrapper', context);
+      elementsToAttach.forEach(function (index, value) {
             let root = document.querySelector('#navbar-main');
             var observer = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
@@ -73,4 +73,4 @@
       }
     }
   }
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
