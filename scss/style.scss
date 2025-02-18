@@ -607,7 +607,7 @@ li.dropdown-item a {
       border-bottom: 0 none;
       .accordion-button {
         span {
-          @extend h2;
+          @extend h4;
         }
       }
     }
