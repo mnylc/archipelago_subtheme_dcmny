@@ -105,7 +105,7 @@ $grid-gutter-width: 2rem;
       --bs-btn-active-color: #{$inverse-color};
       --bs-btn-color: #{$white};
       a {
-        color: $quaternary-shade;
+        color:  #{$white};
         text-decoration: none;
       }
     }
