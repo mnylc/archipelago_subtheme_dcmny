@@ -102,6 +102,8 @@ $grid-gutter-width: 2rem;
     --bs-btn-hover-border-color: #{$link-color};
     &:hover {
       --bs-btn-active-bg: #{$link-color};
+      --bs-btn-active-color: #{$inverse-color};
+      --bs-btn-color: #{$white};
       a {
         color: $quaternary-shade;
         text-decoration: none;
@@ -110,7 +112,7 @@ $grid-gutter-width: 2rem;
     a {
       text-decoration: none;
       &:hover {
-        color: $quaternary-shade;
+        color: $white;
         text-decoration: none;
       }
 
