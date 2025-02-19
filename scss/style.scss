@@ -624,9 +624,9 @@ li.dropdown-item a {
     // So we need to override it.
     .placeholder {
       display: inline-block;
-      min-height: 1em;
+      min-height: auto;
       vertical-align: middle;
-      cursor: default;
+      cursor: auto;
       background-color: rgba(0, 0, 0, 0);
       opacity: revert
     }
