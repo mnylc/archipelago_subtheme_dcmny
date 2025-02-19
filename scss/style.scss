@@ -619,6 +619,19 @@ li.dropdown-item a {
 
   /* Rest of the pages Page exception */
   .archipelago-dcmny-theme {
+
+    // Drupal now uses a new "placeholder" class on any "em". Bootstrap one uses that for Ajax loading/replacing data
+    // So we need to override it.
+    .placeholder {
+      display: inline-block;
+      min-height: 1em;
+      vertical-align: middle;
+      cursor: default;
+      background-color: rgba(0, 0, 0, 0);
+      opacity: revert
+    }
+
+
     &.path-frontpage {
       #navbar-top {
         background-image: url("../images/header-green-scaled-3.png");
