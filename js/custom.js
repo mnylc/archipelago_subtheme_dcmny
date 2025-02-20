@@ -66,6 +66,16 @@
 
         }, false);
 
+        document.addEventListener('drupalViewportOffsetChange.toolbar', (e) => {
+          setTimeout(() => {
+              // Give the CSS transitions time to finish
+              $grid.masonry('layout');
+            }
+            , 500);
+        });
+
+
+
 
         $("#main-breadcrumbs").find('.views-display-link').remove();
         const elementsToAttachViewHeader = once('attach_viewheader', '.view-header .views-display-link', context);
