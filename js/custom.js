@@ -66,16 +66,16 @@
 
         }, false);
 
-        document.addEventListener('drupalViewportOffsetChange', (e) => {
+        const toolbar = once('attach_toolbar_massonry','#toolbar-administration .toolbar-item', context);
+        toolbar.forEach(function (element) {
+        element.addEventListener('click', (e) => {
           setTimeout(() => {
               // Give the CSS transitions time to finish
               $grid.masonry('layout');
             }
             , 500);
+          });
         });
-
-
-
 
         $("#main-breadcrumbs").find('.views-display-link').remove();
         const elementsToAttachViewHeader = once('attach_viewheader', '.view-header .views-display-link', context);
