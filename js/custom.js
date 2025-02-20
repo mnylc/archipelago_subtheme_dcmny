@@ -63,7 +63,7 @@
                 // Give the CSS transitions time to finish
                 $grid.masonry('layout');
               }
-              , 1000);
+              , 500);
 
           }, false);
         });
