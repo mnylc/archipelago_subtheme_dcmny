@@ -12,6 +12,11 @@ libraries:
   - archipelago_subtheme_dcmny/global-styling
 libraries-override:
   bootstrap_barrio/global-styling: false
+  core/drupal.dialog.off_canvas:
+    css:
+      base:
+        misc/dialog/off-canvas/css/reset.css: css/overrides/dialog-off-canvas-reset.css
+        misc/dialog/off-canvas/css/base.css: false
 regions:
   left_navbar: 'Left navbar'
   top_header: 'Top header'

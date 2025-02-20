@@ -1,7 +1,3 @@
-// import files
-@import "variables";
-
-/* Drupal overrides */
 #drupal-off-canvas-wrapper > div:not(.ui-resizable-handle,.ui-dialog-titlebar) *:where(:not(details *, [data-drupal-messages] *, svg, svg *, .ck-reset *, [data-drupal-ck-style-fence] *, .ui-resizable-handle)),
 #drupal-off-canvas-wrapper *:where(.ui-dialog-titlebar *:not(svg, svg *))
 {
@@ -129,7 +125,7 @@
   --bs-table-bg: var(--off-canvas-background-color-dark);
 }
 
-.archipelago-dcmny-theme #drupal-off-canvas-wrapper details {
+archipelago-subtheme #drupal-off-canvas-wrapper details {
   --off-canvas-padding: 1.25rem;
   --off-canvas-vertical-spacing-unit: 0.5rem;
   --off-canvas-details-border-width: 0;
