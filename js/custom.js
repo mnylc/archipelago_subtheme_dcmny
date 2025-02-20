@@ -54,17 +54,19 @@
         $grid.imagesLoaded().progress( function() {
           $grid.masonry('layout');
         });
+        const bartoggler = once('attach_navbar_massonry','#DcmnyLeftNavToggler', context);
+        bartoggler.forEach(function (element) {
+          element.addEventListener('click', function (event) {
+            // If the clicked element doesn't have the right selector, bail
+            if (!event.target.matches('#DcmnyLeftNavToggler')) return;
+            setTimeout(() => {
+                // Give the CSS transitions time to finish
+                $grid.masonry('layout');
+              }
+              , 1000);
 
-        document.addEventListener('click', function (event) {
-          // If the clicked element doesn't have the right selector, bail
-          if (!event.target.matches('#DcmnyLeftNavToggler')) { return };
-          setTimeout(() => {
-              // Give the CSS transitions time to finish
-              $grid.masonry('layout');
-            }
-            , 1000);
-
-        }, false);
+          }, false);
+        });
 
         const toolbar = once('attach_toolbar_massonry','#toolbar-administration .toolbar-item', context);
         toolbar.forEach(function (element) {
