@@ -126,6 +126,9 @@
 }
 
 archipelago-subtheme #drupal-off-canvas-wrapper details {
+  /* offsets the offcanvas by the height of this theme's fixed top navbar */
+  padding-top: var(--nav-bar-top-height);
+
   --off-canvas-padding: 1.25rem;
   --off-canvas-vertical-spacing-unit: 0.5rem;
   --off-canvas-details-border-width: 0;
