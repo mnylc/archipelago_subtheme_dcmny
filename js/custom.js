@@ -57,13 +57,13 @@
 
         document.addEventListener('click', function (event) {
           // If the clicked element doesn't have the right selector, bail
-          if (event.target.matches('#DcmnyLeftNavToggler') || event.target.matches('#toolbar-bar .toolbar-item')) {
+          if (!event.target.matches('#DcmnyLeftNavToggler')) { return };
           setTimeout(() => {
               // Give the CSS transitions time to finish
               $grid.masonry('layout');
             }
             , 1000);
-        }
+
         }, false);
 
 
