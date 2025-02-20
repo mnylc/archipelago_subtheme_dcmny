@@ -66,7 +66,7 @@
 
         }, false);
 
-        document.addEventListener('drupalViewportOffsetChange.toolbar', (e) => {
+        document.addEventListener('drupalViewportOffsetChange', (e) => {
           setTimeout(() => {
               // Give the CSS transitions time to finish
               $grid.masonry('layout');
