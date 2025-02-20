@@ -34,6 +34,14 @@ body {
     /* avoid Mirador's z-index */
     z-index: 1110;
   }
+  table.sticky-header {
+    thead {
+      // Fixes table headers, if not offset by the bar even if our bar is Fixed/
+      top: 0;
+    }
+  }
+
+
   min-height: 100vh;
   height: 100%;
   display: flex;
