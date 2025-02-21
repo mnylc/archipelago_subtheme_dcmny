@@ -54,26 +54,35 @@
         $grid.imagesLoaded().progress( function() {
           $grid.masonry('layout');
         });
-        const bartoggler = once('attach_navbar_massonry','#DcmnyLeftNavToggler', context);
+        const bartoggler = once('attach_navbar_massonry','#DcmnyLeftNavToggler', document);
         bartoggler.forEach(function (element) {
-          element.addEventListener('click', function (event) {
-            // If the clicked element doesn't have the right selector, bail
-            if (!event.target.matches('#DcmnyLeftNavToggler')) return;
+          element.addEventListener('click', (e) => {
             setTimeout(() => {
                 // Give the CSS transitions time to finish
-                $grid.masonry('layout');
+                const masonry_element = $('div.cards-masonry');
+                if (masonry_element && masonry_element.hasOwnProperty('data')) {
+                  const masonry_object = $('div.cards-masonry').data('masonry')
+                  if (masonry_object && masonry_object.hasOwnProperty('layout')) {
+                    masonry_object.layout()
+                  }
+                }
               }
               , 500);
-
-          }, false);
+          });
         });
 
-        const toolbar = once('attach_toolbar_massonry','#toolbar-administration .toolbar-item', context);
+        const toolbar = once('attach_toolbar_massonry','#toolbar-administration .toolbar-item', document);
         toolbar.forEach(function (element) {
         element.addEventListener('click', (e) => {
           setTimeout(() => {
               // Give the CSS transitions time to finish
-              $grid.masonry('layout');
+            const masonry_element = $('div.cards-masonry');
+              if (masonry_element && masonry_element.hasOwnProperty('data')) {
+                const masonry_object = $('div.cards-masonry').data('masonry')
+                if (masonry_object && masonry_object.hasOwnProperty('layout')) {
+                  masonry_object.layout()
+                }
+              }
             }
             , 500);
           });
