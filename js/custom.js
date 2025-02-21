@@ -62,8 +62,13 @@
                 const masonry_element = $('div.cards-masonry');
                 if (masonry_element) {
                   const masonry_object = masonry_element.data('masonry')
-                  if (masonry_object && masonry_object.hasOwnProperty('layout')) {
-                    masonry_object.layout()
+                  if (masonry_object && typeof(masonry_object) == "object") {
+                    try {
+                      masonry_object.layout()
+                    }
+                    catch (e) {
+                      console.log(e);
+                    }
                   }
                 }
               }
@@ -79,8 +84,13 @@
             const masonry_element = $('div.cards-masonry');
               if (masonry_element) {
                 const masonry_object = masonry_element.data('masonry')
-                if (masonry_object && masonry_object.hasOwnProperty('layout')) {
-                  masonry_object.layout()
+                if (masonry_object && typeof(masonry_object) == "object") {
+                  try {
+                    masonry_object.layout()
+                  }
+                  catch (e) {
+                    console.log(e);
+                  }
                 }
               }
             }
