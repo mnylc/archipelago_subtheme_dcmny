@@ -3,7 +3,7 @@
  * Global utilities.
  *
  */
-(function($, Drupal, once) {
+(function($, Drupal, once, masonry) {
 
   'use strict';
 
@@ -60,8 +60,8 @@
             setTimeout(() => {
                 // Give the CSS transitions time to finish
                 const masonry_element = $('div.cards-masonry');
-                if (masonry_element && masonry_element.hasOwnProperty('data')) {
-                  const masonry_object = $('div.cards-masonry').data('masonry')
+                if (masonry_element) {
+                  const masonry_object = masonry_element.data('masonry')
                   if (masonry_object && masonry_object.hasOwnProperty('layout')) {
                     masonry_object.layout()
                   }
@@ -77,8 +77,8 @@
           setTimeout(() => {
               // Give the CSS transitions time to finish
             const masonry_element = $('div.cards-masonry');
-              if (masonry_element && masonry_element.hasOwnProperty('data')) {
-                const masonry_object = $('div.cards-masonry').data('masonry')
+              if (masonry_element) {
+                const masonry_object = masonry_element.data('masonry')
                 if (masonry_object && masonry_object.hasOwnProperty('layout')) {
                   masonry_object.layout()
                 }
@@ -100,4 +100,4 @@
       }
     }
   }
-})(jQuery, Drupal, once);
+})(jQuery, Drupal, once, masonry);
