@@ -3,44 +3,44 @@
  * Global utilities.
  *
  */
-(function($, Drupal) {
+(function($, Drupal, once) {
 
   'use strict';
 
   Drupal.behaviors.archipelago_subtheme_rpi = {
     attach: function (context, settings) {
-      $('#page-wrapper').once('attache_observer')
-        .each(function (index, value) {
-            let root = document.querySelector('#navbar-main');
-            var observer = new IntersectionObserver(function (entries) {
-              const ratio = entries[0].intersectionRatio;
-              if (ratio < 0.8) {
-                let $element = document.querySelector('#navlogo');
-                let $sidebar = document.querySelector('#DcmnyLeftNav');
-                $element.classList.add('navbar-brand-logo-small');
-                $sidebar.classList.add('navbar-full-border');
-                if (entries[0].target.querySelector('.logo').classList.contains("animate__fadeIn")) {
-                  entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeOut");
-                }
-              } else {
-                let $sidebar = document.querySelector('#DcmnyLeftNav');
-                let $element = document.querySelector('#navlogo');
-                $element.classList.remove('navbar-brand-logo-small');
-                $sidebar.classList.remove('navbar-full-border');
-                entries[0].target.querySelector('.logo').classList.remove("animate__fadeOut");
-                entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeIn");
+      const elementsToAttach = once('attach_iab', '#page-wrapper', context);
+      elementsToAttach.forEach(function (index, value) {
+          let root = document.querySelector('#navbar-main');
+          var observer = new IntersectionObserver(function (entries) {
+            const ratio = entries[0].intersectionRatio;
+            if (ratio < 0.8) {
+              let $element = document.querySelector('#navlogo');
+              let $sidebar = document.querySelector('#DcmnyLeftNav');
+              $element.classList.add('navbar-brand-logo-small');
+              $sidebar.classList.add('navbar-full-border');
+              if (entries[0].target.querySelector('.logo').classList.contains("animate__fadeIn")) {
+                entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeOut");
               }
-            },{
-              root: null,
-              rootMargin: '-10px 0px',
-              threshold: [...Array(10).keys()].map(x => x / 10)
-            });
-            let $observedElement = document.querySelector("#DcmnyWelcome > .logo-container");
-            if ($observedElement) {
-              observer.observe($observedElement)
+            } else {
+              let $sidebar = document.querySelector('#DcmnyLeftNav');
+              let $element = document.querySelector('#navlogo');
+              $element.classList.remove('navbar-brand-logo-small');
+              $sidebar.classList.remove('navbar-full-border');
+              entries[0].target.querySelector('.logo').classList.remove("animate__fadeOut");
+              entries[0].target.querySelector('.logo').classList.add("animate__animated", "animate__fadeIn");
             }
+          },{
+            root: null,
+            rootMargin: '-10px 0px',
+            threshold: [...Array(10).keys()].map(x => x / 10)
+          });
+          let $observedElement = document.querySelector("#DcmnyWelcome > .logo-container");
+          if ($observedElement) {
+            observer.observe($observedElement)
           }
-        );
+        }
+      );
 
 
       if ($(context).is('.view') || context == document) {
@@ -54,23 +54,60 @@
         $grid.imagesLoaded().progress( function() {
           $grid.masonry('layout');
         });
+        const bartoggler = once('attach_navbar_massonry','#DcmnyLeftNavToggler', document);
+        bartoggler.forEach(function (element) {
+          element.addEventListener('click', (e) => {
+            setTimeout(() => {
+                // Give the CSS transitions time to finish
+                const masonry_element = $('div.cards-masonry');
+                if (masonry_element) {
+                  const masonry_object = masonry_element.data('masonry')
+                  if (masonry_object && typeof(masonry_object) == "object") {
+                    try {
+                      masonry_object.layout()
+                    }
+                    catch (e) {
+                      console.log(e);
+                    }
+                  }
+                }
+              }
+              , 500);
+          });
+        });
 
-        document.addEventListener('click', function (event) {
-          // If the clicked element doesn't have the right selector, bail
-          if (!event.target.matches('#DcmnyLeftNavToggler')) return;
-          setTimeout(()=> {
+        const toolbar = once('attach_toolbar_massonry','#toolbar-administration .toolbar-item', document);
+        toolbar.forEach(function (element) {
+        element.addEventListener('click', (e) => {
+          setTimeout(() => {
               // Give the CSS transitions time to finish
-              $grid.masonry('layout');
+            const masonry_element = $('div.cards-masonry');
+              if (masonry_element) {
+                const masonry_object = masonry_element.data('masonry')
+                if (masonry_object && typeof(masonry_object) == "object") {
+                  try {
+                    masonry_object.layout()
+                  }
+                  catch (e) {
+                    console.log(e);
+                  }
+                }
+              }
             }
-            ,1000);
-        }, false);
-
+            , 500);
+          });
+        });
 
         $("#main-breadcrumbs").find('.views-display-link').remove();
-        $(context).once('view-header-dcmny').find('.view-header .views-display-link').each(function () {
-          $(this).detach().appendTo("#main-breadcrumbs");
+        const elementsToAttachViewHeader = once('attach_viewheader', '.view-header .views-display-link', context);
+        elementsToAttachViewHeader.forEach(function (view_link) {
+          let main_breadcrump = document.querySelector("#main-breadcrumbs");
+          if (main_breadcrump) {
+            view_link.parentNode.removeChild(view_link);
+            main_breadcrump.appendChild(view_link);
+          }
         });
       }
     }
   }
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

@@ -20,15 +20,28 @@ body {
 
 .ui-front {
   //@ see .affix
-  z-index: 2001 !important;
+  &.ui-autocomplete {
+    z-index: 2001 !important;
+  }
 }
 
 /* animate underline except for navbar-brand */
 #page-wrapper {
+  .card-masonry-wrapper {
+    height:fit-content;
+  }
   .fixed-top {
     /* avoid Mirador's z-index */
     z-index: 1110;
   }
+  table.sticky-header {
+    thead {
+      // Fixes table headers, if not offset by the bar even if our bar is Fixed/
+      top: 0;
+    }
+  }
+
+
   min-height: 100vh;
   height: 100%;
   display: flex;
@@ -586,6 +599,7 @@ li.dropdown-item a {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      row-gap: 0.5rem;
     }
   }
 
@@ -604,7 +618,7 @@ li.dropdown-item a {
       border-bottom: 0 none;
       .accordion-button {
         span {
-          @extend h2;
+          @extend h5;
         }
       }
     }
@@ -616,6 +630,19 @@ li.dropdown-item a {
 
   /* Rest of the pages Page exception */
   .archipelago-dcmny-theme {
+
+    // Drupal now uses a new "placeholder" class on any "em". Bootstrap one uses that for Ajax loading/replacing data
+    // So we need to override it.
+    .placeholder {
+      display: inline-block;
+      min-height: auto;
+      vertical-align: middle;
+      cursor: auto;
+      background-color: rgba(0, 0, 0, 0);
+      opacity: revert
+    }
+
+
     &.path-frontpage {
       #navbar-top {
         background-image: url("../images/header-green-scaled-3.png");
@@ -838,7 +865,8 @@ li.dropdown-item a {
       .views-exposed-form {
         .form-row {
           display: flex;
-          row-gap: 1rem;
+          row-gap: 0.5rem;
+          column-gap: 0.5rem;
           button:not(.form-submit) {
             align-self: self-start;
           }
@@ -859,6 +887,8 @@ li.dropdown-item a {
 
         .form-actions.mb-3 {
           margin-bottom: 0 !important;
+          display: flex;
+          column-gap: 0.5rem;
         }
       }
 
